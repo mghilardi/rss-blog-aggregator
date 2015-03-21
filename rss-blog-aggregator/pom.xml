@@ -240,6 +240,16 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>0.3.5</version>
+				<configuration>
+					<appName>rss-blog-aggregator</appName>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 	
