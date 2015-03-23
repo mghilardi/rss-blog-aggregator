@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
+// @NamedNativeQueries({ @NamedNativeQuery(name = "findBlogsByUser", query = "select * from blog b where b.app_user.id = :userId", resultClass = Blog.class) })
 @Entity
 public class Blog {
 

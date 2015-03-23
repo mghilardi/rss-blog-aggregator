@@ -1,7 +1,6 @@
 package org.mghilardi.rba.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 //import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -62,14 +61,14 @@ public class InitDbService {
 			userRepository.save(userAdmin);
 
 			final Map<String, String> blogs = new TreeMap<String, String>();
-			// blogs.put("F1 Fanatic", "http://www.f1fanatic.co.uk/activity/feed/");
+			// blogs.put("F1 Fanatic",
+			// "http://www.f1fanatic.co.uk/activity/feed/");
 			blogs.put("FlatOut", "http://www.flatout.com.br/feed/");
 			blogs.put("Autosport F1", "http://www.autosport.com/rss/f1news.xml");
 			blogs.put("Autosport All", "http://www.autosport.com/rss/allnews.xml");
 			blogs.put("Autosprint", "http://autosprint.corrieredellosport.it/formula1/feed/");
 			blogs.put("Gazzetta", "http://www.gazzetta.it/rss/formula-1.xml");
 			blogs.put("Grande Premio", "http://grandepremio.uol.com.br/rss.aspx");
-			
 
 			for (final Map.Entry<String, String> entry : blogs.entrySet()) {
 				final Blog blog = new Blog();
@@ -92,7 +91,7 @@ public class InitDbService {
 			 * item1.setTitle("first");
 			 * item1.setLink("http://www.flatout.com.br");
 			 * item1.setPublishedDate(new Date()); itemRepository.save(item1);
-			 *
+			 * 
 			 * final Item item2 = new Item(); item2.setBlog(blogFlatOut);
 			 * item2.setTitle("second");
 			 * item2.setLink("http://www.flatout.com.br");

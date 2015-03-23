@@ -43,6 +43,18 @@ public class UserService {
 		return userRepository.findAll();
 	}
 
+	protected List<Blog> findBlogsByUser(final User user) {
+		final List<Blog> blogs = blogRepository.findByUserId(user.getId());
+		return blogs;
+	}
+
+	protected void findItemsByBlog(final List<Blog> blogs) {
+		for (final Blog blog : blogs) {
+			final List<Item> items = itemRepository.findByBlog(blog, new PageRequest(0, 10, Direction.DESC, "publishedDate"));
+			blog.setItems(items);
+		}
+	}
+
 	public User findOne(int id) {
 		return userRepository.findOne(id);
 	}
@@ -54,11 +66,8 @@ public class UserService {
 	@Transactional
 	public User findOneWithBlogs(int id) {
 		final User user = findOne(id);
-		final List<Blog> blogs = blogRepository.findByUser(user);
-		for (final Blog blog : blogs) {
-			final List<Item> items = itemRepository.findByBlog(blog, new PageRequest(0, 10, Direction.DESC, "publishedDate"));
-			blog.setItems(items);
-		}
+		final List<Blog> blogs = findBlogsByUser(user);
+		findItemsByBlog(blogs);
 		user.setBlogs(blogs);
 		return user;
 	}
