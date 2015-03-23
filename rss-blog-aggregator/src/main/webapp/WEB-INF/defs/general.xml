@@ -42,5 +42,11 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
 		<put-attribute name="current" value="login" />
 	</definition>
+	
+	<definition name="contact" extends="common" >
+		<put-attribute name="title" value="Rss Blog Aggregator" />
+		<put-attribute name="body" value="/WEB-INF/jsp/contact.jsp" />
+		<put-attribute name="current" value="contact" />
+	</definition>
 
 </tiles-definitions>

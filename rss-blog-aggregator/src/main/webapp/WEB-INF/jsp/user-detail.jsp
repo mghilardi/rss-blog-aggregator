@@ -27,7 +27,6 @@ $(document).ready(function(){
 	<c:forEach items="${user.blogs}" var="blog">
 		<li role="presentation"><a href="#blog_${blog.id}" data-toggle="tab"><c:out value="${blog.name}" /></a></li>
 	</c:forEach>
-	<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
 </ul>
 
 <!-- Tab panes -->

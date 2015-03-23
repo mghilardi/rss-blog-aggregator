@@ -58,7 +58,7 @@
 						<security:authorize access="isAuthenticated()">
 							<li><a href='<spring:url value="/logout" />'>Logout</a></li>
 						</security:authorize>
-						<li><a href="#">Contact</a></li>
+						<li class="${current == 'contact' ? 'active' : ''}"><a href='<spring:url value="/contact.html" />'>Contact</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
